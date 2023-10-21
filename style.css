@@ -4,11 +4,15 @@ body {
   grid-template-rows: 20% 20% 20% 20% 20%;
   height: 720px;
 }
-button {
+#myButton {
   grid-column: 3;
   grid-row: 4;
 }
-diV {
+#upgradeButton {
+  grid-column: 4;
+  grid-row: 4;
+}
+#myDiv {
   grid-column: 3;
   grid-row: 3;
   text-align: center;
