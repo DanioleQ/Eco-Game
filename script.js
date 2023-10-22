@@ -1,4 +1,4 @@
-let userMoney = 200;
+let userMoney = 0;
 let contentDiv = document.getElementById("myDiv");
 let button = document.getElementById("myButton");
 let upgradeButton = document.getElementById("upgradeButton");
@@ -6,7 +6,7 @@ let upgradeLevel = 1;
 let upgradeDiv = document.getElementById("upgrade");
 // Money Update Function
 function updateMoneyDisplay() {
-  contentDiv.textContent = userMoney;
+  contentDiv.textContent = userMoney + "$";
 }
 // Money Update by 1sec
 setInterval(updateMoneyDisplay);
@@ -17,8 +17,10 @@ upgradeButton.addEventListener("click", function () {
     userMoney = userMoney - 200;
     upgradeDiv.textContent = "Upgraded";
     updateMoneyDisplay();
-  } else {
+  } else if (userMoney < 200) {
     alert("Not enough money");
+  } else if (upgradeLevel >= 10) {
+    alert("Max level");
   }
 });
 // Main money button maker
